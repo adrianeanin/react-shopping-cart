@@ -1,0 +1,33 @@
+@import "./cssReset.css";
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header-bag-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.home-page {
+  background-image: url("/images/homeBg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.product {
+  border: 2px solid black;
+}
+
+.shop-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+}
