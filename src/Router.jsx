@@ -1,12 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// layouts
 import RootLayout from "./layouts/RootLayout";
-
-//pages
 import ErrorPage from "./pages/ErrorPage";
 import Shop from "./pages/Shop";
 import Home from "./pages/Home";
 import productData from "./data/db.json";
+import ProductDetail from "./components/ProductDetail";
+import { ShopProvider } from "./ShopContext";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -17,14 +16,22 @@ const Router = () => {
       children: [
         { index: true, element: <Home products={productData.products} /> },
         {
-          path: "shop",
+          path: "/shop",
           element: <Shop products={productData.products} />,
         },
+        ...productData.products.map((product) => ({
+          path: `shop/product/${product.id}`,
+          element: <ProductDetail product={product} />,
+        })),
       ],
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <ShopProvider>
+      <RouterProvider router={router} />
+    </ShopProvider>
+  );
 };
 
 export default Router;

@@ -1,4 +1,5 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import Header from "../components/Header";
 
 const App = () => {
   const location = useLocation();
@@ -7,18 +8,7 @@ const App = () => {
   return (
     <>
       <div className={isHomePage ? "home-page" : ""}>
-        <header>
-          <nav>
-            <NavLink to="shop">Shop</NavLink>
-            <NavLink to="/">Furn</NavLink>
-
-            <div className="header-bag-container">
-              <div className="header-bag">Bag</div>
-              <div className="header-count">0</div>
-            </div>
-          </nav>
-        </header>
-
+        <Header />
         <main>
           <Outlet />
         </main>
