@@ -23,7 +23,7 @@ const Header = () => {
 
         <div className="header-bag-container">
           <div className="header-bag" onClick={handleCartClick}>
-            Bag 🛒
+            BAG
           </div>
           <div className="header-count">{totalQuantity}</div>
         </div>

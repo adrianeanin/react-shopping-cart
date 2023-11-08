@@ -7,9 +7,9 @@ const App = () => {
 
   return (
     <>
-      <div className={isHomePage ? "home-page" : ""}>
+      <div className={isHomePage ? "home-active" : "home"}>
         <Header />
-        <main>
+        <main className={isHomePage ? "main-active" : ""}>
           <Outlet />
         </main>
       </div>
