@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 :root {
-  --dark-primary: #2a254b;
-  --primary: #4e4d93;
+  /* --dark-primary: #2a254b; */
+  --dark-primary: #e6ccae;
+  --primary: #fff0db;
   --light-grey: #f9f9f9;
   --border-grey: #ebe8f4;
   --border-dark: #cac6da;
@@ -24,12 +25,14 @@
   --step-3: clamp(1.42rem, 1.83rem + -0.53vw, 1.73rem);
   --step-4: clamp(1.6rem, 2.24rem + -0.82vw, 2.07rem);
   --step-5: clamp(1.8rem, 2.73rem + -1.19vw, 2.49rem);
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--dark-primary) rgba(255, 255, 255, 0.15);
 }
 
 body {
   color: var(--dark-gray);
   font-size: var(--step-0);
-  overflow: hidden;
 }
 
 a {
@@ -41,8 +44,12 @@ a {
   font-size: var(--step-2);
 }
 
-a:hover {
+.active {
   color: var(--primary);
+}
+
+a:hover {
+  color: var(--dark-primary);
   cursor: pointer;
   transform: scale(1.05);
 }
@@ -52,6 +59,30 @@ button {
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
+  color: var(--dark-gray);
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 0.25rem;
+}
+
+.flow > * + * {
+  margin-top: 1em;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  border: 3px solid var(--dark-primary);
 }
 
 /* Header */
@@ -143,8 +174,153 @@ nav {
   line-height: 90%; /* 5.4rem */
 }
 
+/* Shop */
+
+.shop-bg {
+  background-image: url("/images/bg1.jpg");
+  background-position: center;
+  background-repeat: none;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.shop-bg .shop-bg-text {
+  color: var(--white);
+  font-family: Reckless Neue;
+  font-size: 2.25rem;
+  line-height: 140%; /* 3.15rem */
+  margin-left: 10%;
+}
+
+.shop-products {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.shop-details a {
+  font-size: var(--step--1);
+  cursor: pointer;
+  transition: none;
+  transform: none;
+}
+
+.shop-details a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.shop-product {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(51, 50, 61, 0.15);
+}
+
+.rounded-image {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.spacer {
+  padding: 8px;
+}
+
 /* Product Details */
 
-.product {
-  border: 2px solid black;
+.product-container {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+h2 {
+  color: var(--dark-primary);
+  font-family: Reckless Neue;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.product-description button,
+.action-buttons button,
+.clear {
+  background-color: var(--dark-primary);
+  color: var(--white);
+}
+
+/* Cart */
+
+.cart-wrapper {
+  padding: 0.5em 1.5em;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
+.cart-items {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(51, 50, 61, 0.15);
+}
+
+.cart-items-wrapper {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--dark-primary);
+  padding: 1rem;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 1em;
+}
+
+.footer-social-icons a:hover {
+  color: var(--white);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand:hover {
+  color: var(--white);
+}
+
+i {
+  font-size: var(--step-2);
+}
+
+svg {
+  width: var(--step-2);
+  height: var(--step-2);
+}
+
+svg path {
+  transition: fill 0.3s ease;
+}
+
+svg:hover path {
+  fill: var(--white);
+}
+
+@media (max-width: 40em) {
+  .product-container {
+    grid-template-columns: 1fr;
+  }
 }

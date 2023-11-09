@@ -1,12 +1,22 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   return (
     <>
-      <div className="product">
-        <div>{product.image}</div>
-        <div>{product.title}</div>
-        <div>{product.price}</div>
+      <div className="product | flow">
+        <div className="product-img">
+          <Link to={`/shop/product/${product.id}`}>
+            <img
+              src={product.image}
+              alt={product.title}
+              className="rounded-image"
+            />
+          </Link>
+        </div>
+
+        <div className="spacer">{product.title}</div>
+        <div className="spacer">${product.price}</div>
       </div>
     </>
   );

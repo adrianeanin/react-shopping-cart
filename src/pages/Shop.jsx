@@ -6,14 +6,21 @@ import { Link, Outlet } from "react-router-dom";
 const Shop = ({ products }) => {
   return (
     <>
-      <h1>Shop Page</h1>
-      <div className="shop-bg">All Products</div>
-      {products.map((product) => (
-        <div key={product.id}>
-          <Product product={product} />
-          <Link to={`/shop/product/${product.id}`}>View Details</Link>
-        </div>
-      ))}
+      <div className="shop-bg">
+        <p className="wrapper | shop-bg-text"> All Products</p>
+      </div>
+
+      <div className="shop-products | wrapper">
+        {products.map((product) => (
+          <div key={product.id} className="shop-product">
+            <Product product={product} />
+
+            <div className="shop-details | spacer">
+              <Link to={`/shop/product/${product.id}`}>View Details</Link>
+            </div>
+          </div>
+        ))}
+      </div>
 
       <Outlet />
 

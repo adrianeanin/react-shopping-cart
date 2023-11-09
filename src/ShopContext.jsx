@@ -6,6 +6,7 @@ export const ShopContext = createContext({
   cartItems: [],
   addToCart: () => {},
   increaseQuantity: () => {},
+  reduceQuantity: () => {},
   clearCart: () => {},
 });
 
@@ -37,6 +38,16 @@ export const ShopProvider = ({ children }) => {
     setCartItems(updatedCart);
   };
 
+  const reduceQuantity = (productId) => {
+    const updatedCart = cartItems.map((item) =>
+      item.product.id === productId
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    );
+
+    setCartItems(updatedCart);
+  };
+
   const clearCart = () => {
     setCartItems([]);
   };
@@ -47,6 +58,7 @@ export const ShopProvider = ({ children }) => {
         cartItems,
         addToCart,
         increaseQuantity,
+        reduceQuantity,
         clearCart,
         setCartItems,
       }}

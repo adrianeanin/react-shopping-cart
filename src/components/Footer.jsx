@@ -1,9 +1,13 @@
+import { NavLink } from "react-router-dom";
+
 const Footer = () => {
   return (
     <>
-      <footer className="footer | spacer">
+      <footer className="footer">
         <div className="wrapper | footer-inner">
-          <div className="footer-brand">Furn</div>
+          <NavLink to="/" className="footer-brand">
+            Furn
+          </NavLink>
 
           <div className="footer-social-icons">
             <a href="https://github.com/adriananin" aria-label="github profile">

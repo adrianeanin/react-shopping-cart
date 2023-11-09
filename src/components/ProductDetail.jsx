@@ -26,23 +26,36 @@ const ProductDetail = ({ product }) => {
 
   return (
     <>
-      <div className="product-container">
-        <div className="product-img"></div>
-        <div className="product-description">
+      <div className="product-container | wrapper ">
+        <div className="product-img">
+          <img src={product.image} alt={product.title} />
+        </div>
+
+        <div className="product-description | flow">
           <h2>{product.title}</h2>
-          <p>{product.price}</p>
-          <p>Product description</p>
-          <p>{product.text}</p>
-          <p>Quantity: {quantity}</p>
-          <div>
-            <button onClick={handleDecrement}>-</button>
-            <button onClick={handleIncrement}>+</button>
+
+          <p>${product.price}</p>
+
+          <div className="product-description-text">
+            <p>Product description</p>
+            <p>{product.description}</p>
           </div>
-          <button className="add" onClick={handleAddToCart}>
-            {cartItems.some((item) => item.product.id === product.id)
-              ? "Already in cart"
-              : "Add to Cart"}
-          </button>
+
+          {cartItems.some((item) => item.product.id === product.id) ? (
+            <p>Already in cart</p>
+          ) : (
+            <>
+              <div className="action-buttons">
+                <button onClick={handleDecrement}>-</button>
+                <p>{quantity}</p>
+                <button onClick={handleIncrement}>+</button>
+              </div>
+
+              <button className="add" onClick={handleAddToCart}>
+                Add to Cart
+              </button>
+            </>
+          )}
         </div>
       </div>
     </>

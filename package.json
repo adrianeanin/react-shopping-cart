@@ -23,6 +23,9 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.5"
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-imagemin": "^0.6.1"
   }
 }

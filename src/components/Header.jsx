@@ -16,14 +16,24 @@ const Header = () => {
   }, 0);
 
   return (
-    <header>
+    <header className="wrapper">
       <nav>
-        <NavLink to="shop">Shop</NavLink>
-        <NavLink to="/">Furn</NavLink>
+        <NavLink
+          to="shop"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Shop
+        </NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Furn
+        </NavLink>
 
         <div className="header-bag-container">
           <div className="header-bag" onClick={handleCartClick}>
-            BAG
+            Bag
           </div>
           <div className="header-count">{totalQuantity}</div>
         </div>
