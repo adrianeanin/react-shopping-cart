@@ -6,7 +6,10 @@ import { Link, Outlet } from "react-router-dom";
 const Shop = ({ products }) => {
   return (
     <>
-      <div className="shop-bg">
+      <div
+        className="shop-bg blur-load"
+        style={{ backgroundImage: "url(/images/bg1.jpg)" }}
+      >
         <p className="wrapper | shop-bg-text"> All Products</p>
       </div>
 

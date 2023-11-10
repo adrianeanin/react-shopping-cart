@@ -85,6 +85,12 @@ button {
   border: 3px solid var(--dark-primary);
 }
 
+.blur-load {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Header */
 
 header {
@@ -177,9 +183,6 @@ nav {
 /* Shop */
 
 .shop-bg {
-  background-image: url("/images/bg1.jpg");
-  background-position: center;
-  background-repeat: none;
   height: 200px;
   display: flex;
   align-items: center;
@@ -273,7 +276,7 @@ h2 {
 .cart-items-wrapper {
   display: grid;
   gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
 }
 
 /* Footer */
@@ -322,5 +325,14 @@ svg:hover path {
 @media (max-width: 40em) {
   .product-container {
     grid-template-columns: 1fr;
+  }
+
+  .cart-wrapper h2,
+  .cart-wrapper .total {
+    text-align: center;
+  }
+
+  .cart-items-wrapper {
+    justify-content: center;
   }
 }

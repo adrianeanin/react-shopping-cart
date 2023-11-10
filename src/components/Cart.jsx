@@ -39,8 +39,9 @@ const Cart = () => {
             <div className="cart-items-wrapper">
               {cartItems.map((item) => (
                 <div key={item.product.id} className="flow | cart-items">
-                  <div className="cart-img">
+                  <div className="blur-load">
                     <img
+                      loading="lazy"
                       src={item.product.image}
                       alt={item.product.title}
                       className="rounded-image"
@@ -73,10 +74,12 @@ const Cart = () => {
               ))}
             </div>
 
-            <p>Total: {Math.floor(totalPrice)}</p>
-            <button onClick={clearCart} className="clear">
-              Clear Cart
-            </button>
+            <div className="total">
+              <p>Total: {Math.floor(totalPrice)}</p>
+              <button onClick={clearCart} className="clear">
+                Clear Cart
+              </button>
+            </div>
           </div>
         ) : (
           <p>Your cart is empty</p>

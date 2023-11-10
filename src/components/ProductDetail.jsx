@@ -27,8 +27,13 @@ const ProductDetail = ({ product }) => {
   return (
     <>
       <div className="product-container | wrapper ">
-        <div className="product-img">
-          <img src={product.image} alt={product.title} />
+        <div className="blur-load">
+          <img
+            src={product.image}
+            alt={product.title}
+            loading="lazy"
+            style={{ backgroundImage: `url(${product.bgImg})` }}
+          />
         </div>
 
         <div className="product-description | flow">
