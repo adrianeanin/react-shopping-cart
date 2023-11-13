@@ -12,6 +12,11 @@ export default defineConfig({
       plugins: [imageminJpegtran()],
     }),
   ],
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "src/__tests__/setup.js",
+  },
   server: {
     host: "0.0.0.0",
     port: 5178,

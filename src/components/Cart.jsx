@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 import { ShopContext } from "../ShopContext";
 
@@ -26,9 +26,11 @@ const Cart = () => {
     reduceQuantity(productId);
   };
 
-  const totalPrice = cartItems.reduce((total, item) => {
-    return total + item.product.price * item.quantity;
-  }, 0);
+  const totalPrice = useMemo(() => {
+    return cartItems.reduce((total, item) => {
+      return total + item.product.price * item.quantity;
+    }, 0);
+  }, [cartItems]);
 
   return (
     <>
