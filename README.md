@@ -8,6 +8,7 @@ This project is a React application built with Vite. It utilizes the React Route
 - **Shop Page:** Displays a list of products retrieved from the `productData` json file.
 - **Product Detail Page:** Displays detailed information about a specific product and buttons for add to cart and quantity increase.
 - **Error Page:** Shown when there's a routing error.
+- **Image Optimization:** Image optimization with the `ViteImagemin` plugin and lazy loading.
 
 ### Prerequisites
 
@@ -27,6 +28,7 @@ Testing is done using Vitest. Run the tests with the following command: `npm run
 
 - React
 - React Router
+- Context API
 - Vitest
 - Vite (build)
 - Vercel (deployment)
